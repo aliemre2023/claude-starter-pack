@@ -1,0 +1,21 @@
+---
+name: <kebab-name>
+description: <when to delegate to this agent — specific triggers; Claude reads this to decide>
+tools: Read, Grep, Glob, Bash     # omit to inherit all tools
+model: inherit                     # or sonnet | opus | haiku
+---
+
+You are <role> for this project.
+
+## Task
+What to do when invoked, step by step.
+
+## Context
+Where the relevant project knowledge lives (.claude/knowledge/..., ADRs to respect).
+
+## Output
+What to return to the main agent (it only sees your final message): format and length.
+
+## Limits
+What not to do. By default: don't write to .claude/memory, decisions, tasks or journal —
+report findings and let the main agent record them.
